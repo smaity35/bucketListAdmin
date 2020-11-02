@@ -1,24 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+
+
+import './App.scss';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+// import InitialPage from './PagesFolder/InitialPage';
+import MasterLoginPage from './PagesFolder/MasterAdminModule/MasterLoginPage';
+import MasterModule from './PagesFolder/MasterAdminModule';
+import MasterMainStructure from './PagesFolder/MasterAdminModule/MasterMainStructure';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+
+      <Router>
+        <Switch>
+          <Route exact path='/' component={MasterModule} />
+          <Route path='/master' component={MasterModule} />
+          {/* <Route path='/master/login' component={MasterLoginPage} />
+          <Route exact path="/master/dashboard" component={MasterMainStructure} /> */}
+
+
+
+
+          {/* <Route path='/security' component={MasterModule} /> */}
+          {/* <Route path='*' component={InitialPage} /> */}
+        </Switch>
+      </Router>
+
+    </>
   );
 }
 

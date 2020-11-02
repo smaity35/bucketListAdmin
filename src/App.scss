@@ -1,0 +1,183 @@
+@import "~bootstrap/scss/bootstrap";
+
+body {
+    font-family: "Roboto", sans-serif;
+}
+* {
+    outline: none;
+}
+.btn,
+.form-control {
+    box-shadow: none !important;
+}
+
+a,
+button {
+    transition: 0.3s ease;
+    text-decoration: none !important;
+}
+
+.primeScreen {
+    .content {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        h1 {
+            filter: invert(1);
+        }
+    }
+}
+
+@keyframes loginBg {
+    0% {
+        filter: hue-rotate(0deg);
+    }
+    100% {
+        filter: hue-rotate(360deg);
+    }
+}
+.loginPage {
+    background: linear-gradient(-30deg, #03a9f4 0%, #3a78b7 50%, #262626 50%, #607d8b 100%);
+    animation: loginBg 10s linear infinite;
+
+    .login {
+        background-color: rgba(#ffffff, 0.1);
+        width: 28rem;
+        padding: 100px 50px;
+        border-radius: 5px;
+        box-shadow: 0 3px 35px rgba(#000, 0.1), 3px 0 35px rgba(#000, 0.05);
+        position: relative;
+        transition: ease 0.3s;
+        &:hover {
+            transform: scale(1.1);
+        }
+        &::after {
+            content: "";
+            position: absolute;
+            top: 5px;
+            left: 5px;
+            bottom: 5px;
+            right: 5px;
+            border-radius: 5px;
+            pointer-events: none;
+            background: linear-gradient(
+                to bottom,
+                rgba(255, 255, 255, 0.3) 0%,
+                rgba(#ffffff, 0.1) 15%,
+                transparent 50%,
+                transparent 85%,
+                rgba(#ffffff, 0.3) 100%
+            );
+        }
+        .form-group {
+            input {
+                border-color: rgba(#ffffff, 0.2);
+                box-shadow: inset 0 0 25px rgba(#000, 0.2) !important;
+                background-color: transparent;
+                color: #ffffff;
+                padding: 10px 10px 10px 40px;
+                border-radius: 6px;
+                height: auto;
+                font-size: 16px;
+            }
+            .icon {
+                position: absolute;
+                left: 5px;
+                top: 0;
+
+                span {
+                    display: -webkit-inline-flex;
+                    filter: invert(1);
+                    transform: scale(0.8);
+                    line-height: 46px;
+                    height: 46px;
+                }
+            }
+        }
+
+        .checkBox {
+            label {
+                cursor: pointer;
+                color: #ffffff;
+            }
+            input {
+                width: 1.2rem;
+                cursor: pointer;
+                display: inline-flex;
+                vertical-align: middle;
+                margin-right: 10px;
+            }
+        }
+
+        .loginBtn {
+            text-align: center;
+            button {
+                background-color: #ffffff;
+                border-color: rgba(#ffffff, 0.2);
+                color: #585858;
+                font-weight: bold;
+                padding: 10px 40px;
+                border-radius: 6px;
+                height: auto;
+                font-size: 16px;
+                box-shadow: 0 3px 35px rgba(#000, 0.2), 3px 0 35px rgba(#000, 0.05) !important;
+                &:hover {
+                    background-color: transparent;
+                    color: #ffffff;
+                }
+            }
+        }
+    }
+}
+.mainStructure {
+    header {
+        background: linear-gradient(45deg, #f68, #cc8);
+        animation: loginBg 10s linear infinite;
+        .logo {
+            width: 300px;
+            border-right: 1px solid rgba(#ffffff, 0.1);
+            background-color: rgba(#000, 0.2);
+            height: 100%;
+        }
+    }
+    aside {
+        // background: linear-gradient(-45deg, #585858, #383838);
+        width: 300px;
+        background: linear-gradient(45deg, #f68, #cc8);
+        animation: loginBg 10s linear infinite;
+        nav {
+            > ul {
+                > li {
+                    border-bottom: 1px solid rgba(#ffffff, 0.1);
+                    > a {
+                        display: block;
+                        display: flex;
+                        padding: 10px 15px;
+                        background-color: rgba(#000, 0.1);
+                        color: #ffffff;
+                        i {
+                            margin-right: 8px;
+                            font-size: 20px;
+                        }
+                        &:hover {
+                            padding-left: 20px;
+                        }
+                        &.active {
+                            background-color: #ff66;
+                            animation: loginBg 10s linear infinite;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .rightSide {
+        width: calc(100% - 300px);
+    }
+}
